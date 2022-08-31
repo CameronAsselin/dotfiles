@@ -1,0 +1,6 @@
+configuration {
+ modi: "window,drun,ssh,combi";
+ font: "EPSON 太丸ゴシック体Ｂ 12";
+ combi-modi: "window,drun,ssh";
+ }
+@theme "custom"
