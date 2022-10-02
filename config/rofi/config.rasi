@@ -1,6 +1,12 @@
 configuration {
- modi: "window,drun,ssh,combi";
- font: "EPSON 太丸ゴシック体Ｂ 12";
- combi-modi: "window,drun,ssh";
- }
+	modi:                      "drun,run,window";
+	font:                      "EPSON 太丸ゴシック体Ｂ 12";
+   	show-icons:                true;
+	display-drun:              "APPS";
+	display-run:               "RUN";
+	display-window:            "WINDOW";
+	drun-display-format:       "{name}";
+	window-format:             "{w} · {c} · {t}";
+}
+
 @theme "custom"
