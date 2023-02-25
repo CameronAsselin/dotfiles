@@ -1,5 +1,9 @@
 # dotfiles
 
-Just wanted to backup my dotfiles. Feel free to download and use!
+![screenshot](https://github.com/CameronAsselin/dotfiles/blob/main/Pictures/screenshot.png?raw=true)
 
-![First rice!](https://github.com/CameronAsselin/dotfiles/blob/main/first_rice.jpg?raw=true)
+window manager > i3
+terminal > kitty
+bar > polybar
+launcher > rofi
+compositor > picom

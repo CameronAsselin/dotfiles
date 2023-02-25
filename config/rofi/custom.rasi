@@ -1,13 +1,13 @@
 /*****----- Global Properties -----*****/
 * {
-    background:                  #5568ac;
-    background-alt:              #8178ad;
-    foreground:                  #ffffff;
-    border:			 #d0fce3;
-    selected:                    #c9bffe;
-    active:                      #7ed573;
-    urgent:                      #d57373;
-    search:	  		 #ffc6ef;
+    background:                  #45475A;
+    background-alt:              #CBA6F7;
+    foreground:                  #FFFFFF;
+    border:			 #000000;
+    selected:                    #74C7EC;
+    active:                      #A6E3A1;
+    urgent:                      #F38BA8;
+    search:	  		 #94E2D5;
 }
 
 /*****----- Main Window -----*****/
@@ -20,7 +20,7 @@ window {
     border-color:		 @border;
     width:                       1000px;
     x-offset:                    5px;
-    y-offset:                    57px; 
+    y-offset:                    52px; 
 
     /* properties for all widgets */
     enabled:                     true;
