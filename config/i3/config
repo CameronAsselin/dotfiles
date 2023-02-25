@@ -54,7 +54,7 @@ bindsym $mod+b exec firefox
 bindsym $mod+f exec thunar
 bindsym $mod+Shift+f exec kitty ranger
 # open text editor
-bindsym $mod+t exec kitty gedit
+bindsym $mod+t exec mousepad
 # open email
 bindsym $mod+m exec thunderbird
 # open program launcher
@@ -65,15 +65,15 @@ bindsym $mod+q kill
 bindsym Ctrl+q kill
 
 # open i3 config
-bindsym $mod+Ctrl+1 exec kitty vim ~/.config/i3/config
+bindsym $mod+Ctrl+1 exec kitty sudo vim ~/.config/i3/config
 # open polybar config
-bindsym $mod+Ctrl+2 exec kitty vim ~/.config/polybar/config.ini
+bindsym $mod+Ctrl+2 exec kitty sudo im ~/.config/polybar/config.ini
 # open kitty config
-bindsym $mod+Ctrl+3 exec kitty vim ~/.config/kitty/kitty.conf
+bindsym $mod+Ctrl+3 exec kitty sudo vim ~/.config/kitty/kitty.conf
 # open rofi config
-bindsym $mod+Ctrl+4 exec kitty vim ~/.config/rofi/custom.rasi
+bindsym $mod+Ctrl+4 exec kitty sudo vim ~/.config/rofi/custom.rasi
 # open vim config 
-bindsym $mod+Ctrl+5 exec kitty vim ~/.config/.vimrc
+bindsym $mod+Ctrl+5 exec kitty sudo vim ~/.config/.vimrc
 
 # change focus
 bindsym $mod+h focus left
