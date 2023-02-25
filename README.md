@@ -2,8 +2,8 @@
 
 ![screenshot](https://github.com/CameronAsselin/dotfiles/blob/main/Pictures/screenshot.png?raw=true)
 
-window manager > i3
-terminal > kitty
-bar > polybar
-launcher > rofi
-compositor > picom
+window manager > i3<br>
+terminal > kitty<br>
+bar > polybar<br>
+launcher > rofi<br>
+compositor > picom<br>
