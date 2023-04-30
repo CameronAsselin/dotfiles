@@ -8,5 +8,4 @@ window manager > i3<br>
 terminal > kitty<br>
 bar > polybar<br>
 launcher > rofi<br>
-file manager > thunar & ranger<br>
 compositor > picom<br>

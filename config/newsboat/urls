@@ -1,0 +1,34 @@
+## News
+# New York Times
+https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml "~New York Times: Top Stories (US)"
+https://rss.nytimes.com/services/xml/rss/nyt/World.xml "~New York Times: World News"
+https://rss.nytimes.com/services/xml/rss/nyt/NYRegion.xml "~New York Times: New York Region"
+https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml "~New York Times: Technology"
+https://rss.nytimes.com/services/xml/rss/nyt/Science.xml "New York Times: Science"
+https://rss.nytimes.com/services/xml/rss/nyt/Health.xml "~New York Times: Health"
+https://feeds.simplecast.com/54nAGcIl "podcast"
+# Politico
+https://www.politico.com/rss/politicopicks.xml "~Politico"
+# NPR
+https://feeds.npr.org/1001/rss.xml "~NPR"
+
+## Tech
+# Arch
+https://archlinux.org/feeds/news/
+https://archlinux.org/feeds/packages/
+https://wiki.archlinux.org/api.php?hidebots=1&urlversion=1&days=7&limit=50&action=feedrecentchanges&feedformat=atom "~Arch Wiki: Recent changes"
+
+
+## YouTube
+https://www.youtube.com/feeds/videos.xml?channel_id=UC_kH5ltlZdtFAY2qV_lp2xA "youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC7Ucs42FZy3uYzjrqzOIHsw "youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCFQMnBA3CS502aghlcr0_aw "youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCU3oAyhHDXjgbxazqOEG2UA "youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCyWDmyZRjrGHeKF-ofFsT5Q "youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC4USoIAL9qcsx5nCZV_QRnA "youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsvn_Po0SmunchJYOWpOxMg "youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC0aanx5rpr7D1M7KCFYzrLQ "youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC1NB1xUQ8ItM5VoA4101lUQ "youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCjDQKxiTVpXutZc2Ra9wCAg "youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCSdma21fnJzgmPodhC9SJ3g "youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCctjGdm2NlMNzIlxz02IsXA "youtube"
