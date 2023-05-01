@@ -41,7 +41,7 @@ mainbox {
 imagebox {
     padding:                     20px;
     background-color:            transparent;
-    background-image:            url("~/.config/rofi/images/pastel_anime_girl.jpg", height);
+    background-image:            url("~/dotfiles/Pictures/pastel_anime_girl.jpg", height);
     children:                    [ "inputbar", "dummy", "mode-switcher" ];
 }
 

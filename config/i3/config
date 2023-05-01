@@ -202,7 +202,7 @@ client.placeholder      #000000 #000000 #F5C2E7 #000000   #000000
 client.background       #DDDDDD
 
 # Startup Apps
-exec_always feh --bg-fill $HOME/Pictures/wallpaper/spacegirl.jpg
+exec_always feh --bg-fill $HOME/dotfiles/Pictures/wallpaper/spacegirl.jpg
 exec ~/.config/polybar/scripts/launch.sh
 exec_always dunst
 exec_always picom
