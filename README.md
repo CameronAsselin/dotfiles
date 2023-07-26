@@ -9,4 +9,5 @@ terminal > kitty<br>
 bar > polybar<br>
 launcher > rofi<br>
 compositor > picom<br>
-notification > dunst
+text > nvim<br>
+file manager > ranger
