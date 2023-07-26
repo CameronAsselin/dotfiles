@@ -1,13 +1,13 @@
 /*****----- Global Properties -----*****/
 * {
-    background:                  #45475A;
-    background-alt:              #CBA6F7;
+    background:                  #51576D;
+    background-alt:              #C6A0F6;
     foreground:                  #FFFFFF;
-    border:			 #000000;
-    selected:                    #74C7EC;
-    active:                      #A6E3A1;
-    urgent:                      #F38BA8;
-    search:	  		 #94E2D5;
+    border:			                 #000000;
+    selected:                    #6CAAEE;
+    active:                      #A6D189;
+    urgent:                      #E78284;
+    search:	  		               #8BD5CA;
 }
 
 /*****----- Main Window -----*****/
@@ -73,7 +73,7 @@ textbox-prompt-colon {
     str:                         "古";
     background-color:            inherit;
     text-color:                  @search;
-    text-font:			 inherit;
+    text-font:			             inherit;
 }
 entry {
     enabled:                     true;
