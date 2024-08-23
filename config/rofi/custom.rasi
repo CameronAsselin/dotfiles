@@ -3,28 +3,26 @@
     background:                  #51576D;
     background-alt:              #C6A0F6;
     foreground:                  #FFFFFF;
-    border:			                 #000000;
+    border:			 #C6A0F6;
     selected:                    #6CAAEE;
     active:                      #A6D189;
     urgent:                      #E78284;
-    search:	  		               #8BD5CA;
+    search:	  		 #8BD5CA;
 }
 
 /*****----- Main Window -----*****/
 window {
     /* properties for window widget */
     transparency:                "real";
-    location:                    north west;
+    location:                    center;
     fullscreen:                  false;
-    border:			 4px;
+    border:			 2px;
     border-color:		 @border;
     width:                       1000px;
-    x-offset:                    5px;
-    y-offset:                    52px; 
 
     /* properties for all widgets */
     enabled:                     true;
-    border-radius:               15px;
+    border-radius:               10px;
     cursor:                      "default";
     background-color:            @background;
 }
@@ -41,7 +39,7 @@ mainbox {
 imagebox {
     padding:                     20px;
     background-color:            transparent;
-    background-image:            url("~/dotfiles/Pictures/pastel_anime_girl.jpg", height);
+    background-image:            url("~/dotfiles/Pictures/theme/pastel_anime_girl.jpg", height);
     children:                    [ "inputbar", "dummy", "mode-switcher" ];
 }
 
@@ -73,7 +71,7 @@ textbox-prompt-colon {
     str:                         "古";
     background-color:            inherit;
     text-color:                  @search;
-    text-font:			             inherit;
+    text-font:			 inherit;
 }
 entry {
     enabled:                     true;

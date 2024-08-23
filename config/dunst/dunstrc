@@ -24,16 +24,16 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = 300
+    width = (300,1000)
 
     # The maximum height of a single notification, excluding the frame.
-    height = 300
+    height = (0,1000)
 
     # Position the notification in the top right corner
     origin = top-right
 
     # Offset from the origin
-    offset = 5x52
+    offset = 5x5
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -75,7 +75,7 @@
     # Set to 0 to disable.
     # If gap_size is greater than 0, this setting will be ignored.
     separator_height = 2
-    separator_width = 1
+    #separator_width = 1
 
     # Padding between text and separator.
     padding = 8

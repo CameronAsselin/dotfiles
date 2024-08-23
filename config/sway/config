@@ -1,42 +1,41 @@
-### i3 CONFIG FILE ###
+### swaywm CONFIG FILE ###
+
+# For Flameshot
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 # Set the mod key
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Mononoki Nerd Font
+font pango:Mononoki Nerd Font 12
 
 # Start XDG autostart .desktop files using dex. See also
-exec --no-startup-id dex --autostart --environment i3
+#exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 ## KEYBINDINGS ##
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/dunst/scripts/volume_brightness_x11.sh volume_up
-bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/dunst/scripts/volume_brightness_x11.sh volume_down
-bindsym XF86AudioMute exec --no-startup-id ~/.config/dunst/scripts/volume_brightness_x11.sh volume_mute
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/dunst/scripts/volume_brightness_wayland.sh volume_up
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/dunst/scripts/volume_brightness_wayland.sh volume_down
+bindsym XF86AudioMute exec --no-startup-id ~/.config/dunst/scripts/volume_brightness_wayland.sh volume_mute
 
 # Control screen brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/dunst/scripts/volume_brightness_x11.sh brightness_up
-bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/dunst/scripts/volume_brightness_x11.sh brightness_down
+bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/dunst/scripts/volume_brightness_wayland.sh brightness_up
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/dunst/scripts/volume_brightness_wayland.sh brightness_down
 
-# Interactive screenshot by pressing printscreen
-bindsym Print exec gnome-screenshot -i 
 # Crop-area screenshot
-bindsym $mod+Print exec gnome-screenshot -a
+bindsym Print exec flameshot gui
+
+#bindsym $mod+Print exec export XDG_CURRENT_DESKTOP=sway && flameshot
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-# Move tiling windows via drag & drop by left-clicking into the title bar,
-# or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
 
 # Kill focused window
 bindsym $mod+q kill
@@ -96,29 +95,26 @@ bindsym $mod+a focus parent
 bindsym $mod+c focus child
 
 # Reload the configuration file
-bindsym $mod+Shift+c reload
-# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# Exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+r reload
 
 # Start applications
 bindsym $mod+Return exec kitty
 bindsym $mod+b exec firefox
-bindsym $mod+f exec kitty ranger
-bindsym $mod+Shift+f exec thunar
-bindsym $mod+t exec nvim
+bindsym $mod+f exec thunar
+bindsym $mod+Shift+f exec kitty ranger
+bindsym $mod+t exec mousepad
+bindsym $mod+Shift+t exec kitty nvim
 bindsym $mod+m exec thunderbird
 bindsym $mod+d exec rofi -show drun
+bindsym $mod+Shift+d exec rofi -show run
 
 # Open config files in vim
-bindsym $mod+Ctrl+1 exec kitty nvim ~/.config/i3/config
-bindsym $mod+Ctrl+2 exec kitty nvim ~/.config/polybar/config.ini
+bindsym $mod+Ctrl+1 exec kitty nvim ~/.config/sway/config
+bindsym $mod+Ctrl+2 exec kitty nvim ~/.config/waybar/config
 bindsym $mod+Ctrl+3 exec kitty nvim ~/.config/kitty/kitty.conf
-bindsym $mod+Ctrl+4 exec kitty nvim ~/.config/rofi/custom.rasi
+bindsym $mod+Ctrl+4 exec kitty nvim ~/.config/rofi/blacklotus.rasi
 bindsym $mod+Ctrl+5 exec kitty nvim ~/.config/dunst/dunstrc
 bindsym $mod+Ctrl+6 exec kitty nvim ~/.bashrc
-bindsym $mod+Ctrl+7 exec kitty nvim ~/.vimrc
 
 ## WORKSPACES ##
 
@@ -163,14 +159,14 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-#
-assign [class="thunderbird"] → 4
-
 ## STYLE ##
 
 # Gaps
 gaps inner 10px
 gaps outer 10px
+
+# Boarder
+title_align center
 
 # Colors                 border  backgr. text    indictr child_border
 client.focused          #CBA6F7 #121212 #F4B8E4 #CBA6F7 #CBA6F7
@@ -182,22 +178,22 @@ client.background       #FFFFFF
 
 ## STARTUP ##
 
-# Boarder
-title_align center
-
 # Open these windows floating
-#i3for_window [app_id="org.gnome.Calculator"] floating enable
-#3for_window [app_id="blueberry.py"] floating enable
-#for_window [app_id="nm-connection-editor"] floating enable
-#for_window [app_id="xfce4-settings-manager"] floating enable
-#for_window [app_id="xfce4-appearance-settings"] floating enable
-#for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="org.gnome.Calculator"] floating enable
+for_window [app_id="blueberry.py"] floating enable
+for_window [app_id="nm-connection-editor"] floating enable
+for_window [app_id="xfce4-settings-manager"] floating enable
+for_window [app_id="xfce4-appearance-settings"] floating enable
+for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="copyq"] floating enable
+
+# Wallpaper
+output * bg ~/Pictures/wallpaper/1673386923212400.png fill
 
 # Apps
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper/spacegirl.jpg
-exec_always --no-startup-id ~/.config/polybar/scripts/launch.sh
+exec_always --no-startup-id ~/.config/waybar/scripts/launch.sh
 exec_always --no-startup-id dunst
-exec_always --no-startup-id picom
+exec --no-startup-id copyq
+exec --no-startup-id nm-applet
 exec --no-startup-id kitty
 exec --no-startup-id thunderbird
-exec --no-startup-id birdtray

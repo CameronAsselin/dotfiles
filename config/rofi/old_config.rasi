@@ -1,0 +1,12 @@
+configuration {
+	modi:                      "drun,run,window";
+	font:                      "Mononoki Nerd Font 12";
+  show-icons:                true;
+	display-drun:              "APPS";
+	display-run:               "RUN";
+	display-window:            "WINDOW";
+	drun-display-format:       "{name}";
+	window-format:             "{w} · {c} · {t}";
+}
+
+@theme "custom"
