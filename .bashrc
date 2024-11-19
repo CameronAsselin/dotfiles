@@ -27,3 +27,6 @@ alias l.='exa -a | egrep "^\."'
 # Skeleton GIF & ls home directory when opening terminal
 kitty +kitten icat --align left ~/dotfiles/Pictures/skeleton_cheezit.gif
 ls ~/
+
+# Change manpage viewer to vim
+export MANPAGER='nvim +Man!'
