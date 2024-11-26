@@ -13,6 +13,14 @@ PERL_LOCAL_LIB_ROOT="/home/cameron/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB
 PERL_MB_OPT="--install_base \"/home/cameron/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/cameron/perl5"; export PERL_MM_OPT;
 
+# For Japanese keyboard
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+
+# Fool xdg-open's detectDE function (open folders in file manager rather than terminal)
+export DE="gnome"
+
 # Alias list
 alias clear='cd && clear && kitty +kitten icat --align left ~/dotfiles/Pictures/skeleton_cheezit.gif && ls'
 alias update='sudo reflector --latest 5 --verbose --country US --sort rate --save /etc/pacman.d/mirrorlist --download-timeout 60; sudo pacman -Syu; paru; pacman -Qtdq | sudo pacman -Rns; sudo pacman -Scc'
