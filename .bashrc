@@ -21,8 +21,11 @@ XMODIFIERS=@im=fcitx
 # Fool xdg-open's detectDE function (open folders in file manager rather than terminal)
 export DE="gnome"
 
+# Change manpage viewer to vim
+export MANPAGER='nvim +Man!'
+
 # Alias list
-alias clear='cd && clear && kitty +kitten icat --align left ~/dotfiles/Pictures/skeleton_cheezit.gif && ls'
+alias clear='cd && clear && kitty +kitten icat --align left ~/Pictures/theme/skeleton_cheezit.gif && ls'
 alias update='sudo reflector --latest 5 --verbose --country US --sort rate --save /etc/pacman.d/mirrorlist --download-timeout 60; sudo pacman -Syu; paru; pacman -Qtdq | sudo pacman -Rns; sudo pacman -Scc'
 alias neofetch='fastfetch'
 # Changing "ls" to "exa"
@@ -33,8 +36,5 @@ alias l='exa -F --icons --color=always --group-directories-first'
 alias l.='exa -a | egrep "^\."'
 
 # Skeleton GIF & ls home directory when opening terminal
-kitty +kitten icat --align left ~/dotfiles/Pictures/skeleton_cheezit.gif
+kitty +kitten icat --align left ~/Pictures/theme/skeleton_cheezit.gif
 ls ~/
-
-# Change manpage viewer to vim
-export MANPAGER='nvim +Man!'
