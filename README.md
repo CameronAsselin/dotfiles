@@ -5,5 +5,4 @@ backup of my dotfiles<br>
 window manager > sway<br>
 terminal > kitty<br>
 bar > waybar<br>
-launcher > rofi<br>
-file manager > ranger
+launcher > rofi
