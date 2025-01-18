@@ -14,7 +14,7 @@
        "format": "{icon}",
        "format-icons": {
           "urgent": "",
-          "active": "󰚌",
+          "focused": "󰚌",
 	  "1": " ",
        }
     },
@@ -22,7 +22,7 @@
        "format": "{icon}",
        "format-icons": {
           "urgent": "",
-          "active": "󰚌",
+          "focused": "󰚌",
 	  "1": "",
        }
     },
@@ -156,7 +156,7 @@
         "exec": "~/.config/waybar/scripts/stock/stock.py --customticker BBBYQ"
     },
     "bluetooth": {
-      	"format": " {status}",
+      	"format": "",
         "format-on": "",
 	      "format-disabled": "󰂲",
 	      "format-off": "󰂲",
