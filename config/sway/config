@@ -188,7 +188,7 @@ for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="copyq"] floating enable
 
 # Wallpaper
-output * bg ~/Pictures/wallpaper/1673386923212400.png fill
+output * bg ~/Pictures/theme/wallpaper.png fill
 
 # Apps
 exec_always --no-startup-id ~/.config/waybar/scripts/launch.sh
