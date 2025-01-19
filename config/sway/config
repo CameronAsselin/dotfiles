@@ -1,9 +1,5 @@
 ### swaywm CONFIG FILE ###
 
-# For Flameshot
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-
 # Set the mod key
 set $mod Mod4
 
@@ -28,11 +24,6 @@ bindsym XF86AudioMute exec --no-startup-id ~/.config/dunst/scripts/volume_bright
 # Control screen brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/dunst/scripts/volume_brightness_wayland.sh brightness_up
 bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/dunst/scripts/volume_brightness_wayland.sh brightness_down
-
-# Crop-area screenshot
-bindsym Print exec flameshot gui
-
-#bindsym $mod+Print exec export XDG_CURRENT_DESKTOP=sway && flameshot
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -191,9 +182,13 @@ for_window [app_id="copyq"] floating enable
 output * bg ~/Pictures/theme/wallpaper.png fill
 
 # Apps
-exec_always --no-startup-id ~/.config/waybar/scripts/launch.sh
-exec_always --no-startup-id dunst
-exec --no-startup-id copyq
-exec --no-startup-id nm-applet
-exec --no-startup-id kitty
-exec --no-startup-id thunderbird
+exec_always ~/.config/waybar/scripts/launch.sh
+exec_always dunst
+exec copyq
+exec nm-applet
+assign [app_id="thunderbird"] 3
+exec thunderbird
+assign [app_id="strawberry"] 4
+exec strawberry
+exec swaymsg 'workspace 1; exec kitty'
+exec swaymsg 'workspace 2; exec firefox'
