@@ -18,9 +18,6 @@ GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
 
-# Fool xdg-open's detectDE function (open folders in file manager rather than terminal)
-export DE="gnome"
-
 # Change manpage viewer to vim
 export MANPAGER='nvim +Man!'
 
