@@ -1,204 +1,202 @@
 {
-    "layer": "top",
-    "position": "top",
-    "height": 30,
-    "margin": "0 0 0 0",
+   "layer": "top",
+   "position": "top",
+   "height": 30,
+   "margin": "0 0 0 0",
 
-    "modules-left": ["custom/menu", "custom/crypto", "custom/stock", "mpris"],
-    "modules-center": ["hyprland/workspaces", "sway/workspaces"],
-    "modules-right": ["battery", "pulseaudio", "custom/usb", "custom/vpn", "temperature", "bluetooth", "tray", "custom/weather", "clock"], 
+   "modules-left": ["custom/menu", "custom/crypto", "custom/stock", "mpris"],
+   "modules-center": ["hyprland/workspaces", "sway/workspaces"],
+   "modules-right": ["battery", "pulseaudio", "custom/usb", "custom/vpn", "temperature", "bluetooth", "tray", "custom/weather", "clock"], 
     
- // Modules configuration
+// Modules configuration
  
-    "hyprland/workspaces": {
-       "format": "{icon}",
-       "format-icons": {
-          "urgent": "",
-          "focused": "󰚌",
-	  "1":"",
-          "2":"",
-	  "3":"",
-    	  "4":"",
-          "5":"",
-       }
-    },
-    "sway/workspaces": {
-       "format": "{icon}",
-       "format-icons": {
-          "urgent": "",
-          "focused": "󰚌",
-	  "1":"",
-          "2":"",
-	  "3":"",
-          "4":"",
-          "5":"",
-       },
-       "persistent-workspaces": {
-          "1": [],
-          "2": [],
-          "3": [],
-          "4": [],
-          "5": [],
-        },
-    },
-    "mpris": {
-	     "format": "{player_icon}{artist} - {title}",
-       "artist-len": 18,
-       "title-len": 22,
-       "interval": 2,
-	     "player-icons": { 
-          "default": "🎵 ",
-          "mpv": "  ",
-          "strawberry": "🍓 ",
-          "firefox": "  ",
-          "spotify": " "
-	     }
-    },
-    "custom/weather": {
-        "exec": "~/.config/waybar/scripts/get_weather.sh",
-        "return-type": "json",
-        "format": "{}",
-        "tooltip": true,
-        "interval": 3600,
-        "on-click": "firefox https://wttr.in/"
-    },
-    "custom/menu": {
-       "format": " ",
-       "on-click": "rofi -show drun",
-       "on-click-right": "rofi -show run",
-       "tooltip": false
-    },
-    "custom/vpn": {
-        "format": " ",
-        "exec": "echo '{\"class\": \"connected\"}'",
-        "exec-if": "test -d /proc/sys/net/ipv4/conf/tun0",
-        "return-type": "json",
-        "interval": 5,
-        "on-click-right": "nm-connection-editor",
-        "on-click": "kitty -e nmtui",
-        "tooltip": true
-    },
-    "custom/usb": {
-        "format": "󱇰",
-        "exec": "echo '{\"class\": \"connected\"}'",
-        "exec-if": "test -d /sys/bus/usb/devices/2-1 || test -d /sys/bus/usb/devices/2-2",
-        "return-type": "json",
-        "interval": 5,
-        "on-click": "thunar",
-        // "on-click-right": "kitty ranger /run/media/",
-        "tooltip": true
-    },
-    "cpu": {
-        "format": "󰊠{usage: >3}%",
-        "on-click": "kitty gotop"
-    },
-    "memory": {
-        "format": "{: >3}%",
-        "on-click": "kitty gotop"
-    },
-    "temperature": {
-        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
-        "critical-threshold": 80,
-        "format-critical": "",
-        "format": "",
-        "tooltip-format": "{temperatureF}°F\n{temperatureC}°C",
-        "on-click": "kitty gotop"
-    },
-    "backlight": {
-        "format": "{icon} {percent: >3}%",
-        "format-icons": [""],
-        "on-scroll-down": "brightnessctl -c backlight set 10%-",
-        "on-scroll-up": "brightnessctl -c backlight set +10%"
-    },
-    "battery": {    
-        "format": "{icon}",
-    	  "format-icons": ["󰛞     ","     "," 󰛞    ","     ","  󰛞   ","     ","   󰛞  ","     ","    󰛞 ","     "],
-      	"interval": 5,
-        "tooltip-format": "Capacity: {capacity}%\n{timeTo}",
-        "states": {
-            "full": 100,
-            "great": 98,
-            "good": 80,
-            "fair": 50,
-            "warning": 30,
-            "critical": 10
-        },
-    },
-    "network": {
-        // "interface": "wlp2s0", // (Optional) To force the use of this interface
-        "format": "󰱮",
-      	"format-icons": ["󰇷", "󰱶", "󰱴", "󰱨", "󰱯"],
-        "format-wifi": "{icon}",
-        "format-ethernet": "󰈀",
-        "format-disconnected": "󰱮",
-        "on-click-right": "nm-connection-editor",
-        "on-click": "kitty -e nmtui",
-        "tooltip-format": "{essid}\n{ipaddr} via {gwaddr}",
-        "tooltip-format-disconnected": "disconnected"
-    },
-    "pulseaudio": {
-        "scroll-step": 1,
-        "format": "{icon}",
-        // "format-bluetooth": "",
-        "format-muted": "󰝟",
-        "format-icons": {
-            "headphones": "󰋋",
-            "handsfree": "󱠰",
-            "headset": "󰋎",
-            "phone": "",
-            "portable": "󰄜",
-            "car": "",
-            "default": ["󰕿", "󰖀", "󰕾"]
-        },
-        "on-click": "pavucontrol",
-        "on-scroll-up": "pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob",
-        "on-scroll-down": "pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob",
-        "tooltip-format": "Volume: {volume: >3}%\n{desc}"
-    },
-    "custom/crypto": {
-        "format": "{}",
-        "exec": "~/.config/waybar/scripts/crypto/crypto.py"
-    },
-    "custom/stock": {
-        "format": " {}",
-        "exec": "~/.config/waybar/scripts/stock/stock.py --customticker BBBYQ"
-    },
-    "bluetooth": {
-      	"format": "",
-        "format-on": "",
-	      "format-disabled": "󰂲",
-	      "format-off": "󰂲",
-        "format-connected": " {device_alias}",
-	      "tooltip-format": "{controller_alias}\t{controller_address}",
-	      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-	      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        "tooltip-format-disabled": "disabled",
-        "tooltip-format-off": "off",
-        "on-click": "blueberry"
-    },
-    "tray": {
-        "spacing": 10,
-        "icon-size": 20,
-        "show-passive-items": "true",
-        "reverse-direction": "false"
-    },
-    "clock": {
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "format": "{:%a %b %d\n %I:%M %p}",
-        "interval": 1,
-        "on-click": "kitty calcurse",
-        "calendar": {
-            "mode": "month",
-            "mode-mon-col": 3,
-            "on-scroll": 1,
-            "on-click-right": "mode",
-            "format": {
-                "months":     "<span color='#F4B8E4'><b>{}</b></span>",
-                "days":       "<span color='#A6D189'><b>{}</b></span>",
-                "weeks":      "<span color='#E5C890'><b>W{}</b></span>",
-                "weekdays":   "<span color='#F5A97F'><b>{}</b></span>",
-                "today":      "<span color='#E78284'><b><u>{}</u></b></span>"
-            }
-        },
-    },
+   "hyprland/workspaces": {
+      "format": "{icon}",
+      "format-icons": {
+         "urgent": "",
+         "focused": "󰚌",
+	 "1":"",
+         "2":"",
+	 "3":"",
+    	 "4":"",
+         "5":"",
+      },
+   },
+   "sway/workspaces": {
+      "format": "{icon}",
+      "format-icons": {
+         "urgent": "",
+         "focused": "󰚌",
+	 "1":"",
+         "2":"",
+	 "3":"",
+         "4":"",
+         "5":"",
+      },
+      "persistent-workspaces": {
+         "1": [],
+         "2": [],
+         "3": [],
+         "4": [],
+         "5": [],
+      },
+   },
+   "mpris": {
+      "format": "{player_icon}{artist} - {title}",
+      "artist-len": 18,
+      "title-len": 22,
+      "interval": 2,
+      "player-icons": { 
+         "default": "🎵 ",
+         "mpv": "  ",
+         "strawberry": "🍓 ",
+         "firefox": "  ",
+         "spotify": " "
+      },
+   },
+   "custom/weather": {
+      "exec": "~/.config/waybar/scripts/get_weather.sh",
+      "return-type": "json",
+      "format": "{}",
+      "tooltip": true,
+      "interval": 3600,
+      "on-click": "firefox https://wttr.in/"
+   },
+   "custom/menu": {
+      "format": " ",
+      "on-click": "rofi -show drun",
+      "on-click-right": "rofi -show run",
+      "tooltip": false
+   },
+   "custom/vpn": {
+      "format": " ",
+      "exec": "echo '{\"class\": \"connected\"}'",
+      "exec-if": "test -d /proc/sys/net/ipv4/conf/tun0",
+      "return-type": "json",
+      "interval": 5,
+      "on-click-right": "nm-connection-editor",
+      "on-click": "kitty -e nmtui",
+      "tooltip": true
+   },
+   "custom/usb": {
+      "format": "󱇰",
+      "exec": "echo '{\"class\": \"connected\"}'",
+      "exec-if": "test -d /sys/bus/usb/devices/2-1 || test -d /sys/bus/usb/devices/2-2",
+      "return-type": "json",
+      "interval": 5,
+      "on-click": "thunar",
+      "on-click-right": "kitty ranger ~/",
+      "tooltip": true
+   },
+   "cpu": {
+      "format": "󰊠{usage: >3}%",
+      "on-click": "kitty gotop"
+   },
+   "memory": {
+      "format": "{: >3}%",
+      "on-click": "kitty gotop"
+   },
+   "temperature": {
+      "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+      "critical-threshold": 80,
+      "format-critical": "",
+      "format": "",
+      "tooltip-format": "{temperatureF}°F\n{temperatureC}°C",
+      "on-click": "kitty gotop"
+   },
+   "backlight": {
+      "format": "{icon} {percent: >3}%",
+      "format-icons": [""],
+      "on-scroll-down": "brightnessctl -c backlight set 10%-",
+      "on-scroll-up": "brightnessctl -c backlight set +10%"
+   },
+   "battery": {    
+      "format": "{icon}",
+      "format-icons": ["󰛞     ","     "," 󰛞    ","     ","  󰛞   ","     ","   󰛞  ","     ","    󰛞 ","     "],
+      "interval": 5,
+      "tooltip-format": "Capacity: {capacity}%\n{timeTo}",
+      "states": {
+         "full": 100,
+         "great": 98,
+         "good": 80,
+         "fair": 50,
+         "warning": 30,
+         "critical": 10
+      },
+   },
+   "network": {
+      "format": "󰱮",
+      "format-icons": ["󰇷", "󰱶", "󰱴", "󰱨", "󰱯"],
+      "format-wifi": "{icon}",
+      "format-ethernet": "󰈀",
+      "format-disconnected": "󰱮",
+      "on-click-right": "nm-connection-editor",
+      "on-click": "kitty -e nmtui",
+      "tooltip-format": "{essid}\n{ipaddr} via {gwaddr}",
+      "tooltip-format-disconnected": "disconnected"
+   },
+   "pulseaudio": {
+      "scroll-step": 1,
+      "format": "{icon}",
+      "format-muted": "󰝟",
+      "format-icons": {
+         "headphones": "󰋋",
+         "handsfree": "󱠰",
+         "headset": "󰋎",
+         "phone": "",
+         "portable": "󰄜",
+         "car": "",
+         "default": ["󰕿", "󰖀", "󰕾"]
+      },
+      "on-click": "pavucontrol",
+      "on-scroll-up": "pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob",
+      "on-scroll-down": "pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob",
+      "tooltip-format": "Volume: {volume: >3}%\n{desc}"
+   },
+   "custom/crypto": {
+      "format": "{}",
+      "exec": "~/.config/waybar/scripts/crypto/crypto.py"
+   },
+   "custom/stock": {
+      "format": " {}",
+      "exec": "~/.config/waybar/scripts/stock/stock.py --customticker BBBYQ"
+   },
+   "bluetooth": {
+      "format": "",
+      "format-on": "",
+      "format-disabled": "󰂲",
+      "format-off": "󰂲",
+      "format-connected": " {device_alias}",
+      "tooltip-format": "{controller_alias}\t{controller_address}",
+      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+      "tooltip-format-disabled": "disabled",
+      "tooltip-format-off": "off",
+      "on-click": "blueberry"
+   },
+   "tray": {
+      "spacing": 10,
+      "icon-size": 20,
+      "show-passive-items": "true",
+      "reverse-direction": "false"
+   },
+   "clock": {
+      "tooltip-format": "<tt><small>{calendar}</small></tt>",
+      "format": "{:%a %b %d\n %I:%M %p}",
+      "interval": 1,
+      "on-click": "kitty calcurse",
+      "calendar": {
+         "mode": "month",
+         "mode-mon-col": 3,
+         "on-scroll": 1,
+         "on-click-right": "mode",
+         "format": {
+            "months":     "<span color='#F4B8E4'><b>{}</b></span>",
+            "days":       "<span color='#A6D189'><b>{}</b></span>",
+            "weeks":      "<span color='#E5C890'><b>W{}</b></span>",
+            "weekdays":   "<span color='#F5A97F'><b>{}</b></span>",
+            "today":      "<span color='#E78284'><b><u>{}</u></b></span>"
+         },
+      },
+   },
 }
