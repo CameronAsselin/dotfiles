@@ -1,0 +1,7 @@
+layout splits
+launch --var window=weechat weechat
+launch --location=vsplit --bias=40 --var window=calcurse calcurse
+focus_matching_window var:window=weechat
+launch --location=hsplit --bias=10 cava
+focus_matching_window var:window=calcurse
+launch --location=hsplit
