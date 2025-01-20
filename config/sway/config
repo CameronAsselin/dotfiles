@@ -188,7 +188,9 @@ exec copyq
 exec nm-applet
 assign [app_id="thunderbird"] 3
 exec thunderbird
-assign [app_id="strawberry"] 4
+assign [app_id="gfeeds"] 4
+exec gfeeds
+assign [app_id="strawberry"] 5
 exec strawberry
 exec swaymsg 'workspace 1; exec kitty'
 exec swaymsg 'workspace 2; exec firefox'
