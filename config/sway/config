@@ -192,5 +192,5 @@ assign [app_id="gfeeds"] 4
 exec gfeeds
 assign [app_id="strawberry"] 5
 exec strawberry
-exec swaymsg 'workspace 1; exec kitty'
 exec swaymsg 'workspace 2; exec firefox'
+exec swaymsg 'workspace 1; exec kitty --session ~/.config/kitty/kitty-session'
