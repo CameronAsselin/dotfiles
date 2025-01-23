@@ -25,6 +25,9 @@ bindsym XF86AudioMute exec --no-startup-id ~/.config/dunst/scripts/volume_bright
 bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/dunst/scripts/volume_brightness_wayland.sh brightness_up
 bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/dunst/scripts/volume_brightness_wayland.sh brightness_down
 
+# Screenshot selector
+bindsym Print exec "slurp | grim -g - - | wl-copy"
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
