@@ -14,6 +14,15 @@ font pango:Mononoki Nerd Font 12
 # screen before suspend. Use loginctl lock-session to lock your screen.
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+## INPUTS ##
+
+# Used to set pointer acceleration on ThinkPad, default is too slow
+input 2:7:SynPS/2_Synaptics_TouchPad {
+    tap disabled
+    accel_profile "flat"
+    pointer_accel 0.75
+}
+
 ## KEYBINDINGS ##
 
 # Use pactl to adjust volume in PulseAudio.
