@@ -203,4 +203,4 @@ exec thunderbird
 assign [app_id="gfeeds"] 4
 exec gfeeds
 exec swaymsg 'workspace 2; exec firefox'
-exec swaymsg 'workspace 1; exec kitty --session ~/.config/kitty/kitty-session'
+exec swaymsg 'workspace 1; exec kitty'
