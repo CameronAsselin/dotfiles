@@ -183,8 +183,6 @@ client.background       #FFFFFF
 for_window [app_id="org.gnome.Calculator"] floating enable
 for_window [app_id="blueberry.py"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
-for_window [app_id="xfce4-settings-manager"] floating enable
-for_window [app_id="xfce4-appearance-settings"] floating enable
 for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="copyq"] floating enable
 
