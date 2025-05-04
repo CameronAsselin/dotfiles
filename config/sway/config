@@ -79,13 +79,10 @@ bindsym $mod+Shift+Right move right
 # Split in horizontal orientation
 bindsym $mod+w split h
 # Split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+e split v
 
 # Enter fullscreen mode for the focused container
 bindsym $mod+x fullscreen toggle
-
-# Change container layout (stacked, tabbed, toggle split)
-bindsym $mod+e layout toggle split
 
 # Change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -110,6 +107,7 @@ bindsym $mod+Shift+t exec kitty nvim
 bindsym $mod+m exec thunderbird
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+Shift+d exec rofi -show run
+bindsym $mod+v exec copyq toggle
 
 # Open config files in vim
 bindsym $mod+Ctrl+1 exec kitty nvim ~/.config/sway/config
