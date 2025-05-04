@@ -110,6 +110,7 @@ bindsym $mod+Shift+f exec thunar
 bindsym $mod+t exec nvim
 bindsym $mod+m exec thunderbird
 bindsym $mod+d exec rofi -show drun
+bindsym Ctrl+Shift+v copyq toggle
 
 # Open config files in vim
 bindsym $mod+Ctrl+1 exec kitty nvim ~/.config/i3/config
