@@ -154,7 +154,8 @@
    },
    "custom/crypto": {
       "format": "{}",
-      "exec": "~/.config/waybar/scripts/crypto/crypto.py"
+      "exec": "~/.config/waybar/scripts/crypto/crypto.py",
+      "on-click": "firefox https://www.coingecko.com/en/coins/monero",
    },
    "custom/stock": {
       "format": " {}",
