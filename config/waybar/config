@@ -6,7 +6,7 @@
 
    "modules-left": ["custom/menu", "custom/crypto", "custom/stock", "mpris"],
    "modules-center": ["hyprland/workspaces", "sway/workspaces"],
-   "modules-right": ["battery", "pulseaudio", "custom/usb", "custom/vpn", "temperature", "bluetooth", "tray", "custom/weather", "clock", "custom/power"], 
+   "modules-right": ["battery", "temperature", "pulseaudio", "custom/usb", "custom/vpn", "bluetooth", "tray", "custom/weather", "clock", "custom/power"], 
     
 // Modules configuration
  
@@ -98,10 +98,11 @@
    "temperature": {
       "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
       "critical-threshold": 80,
-      "format-critical": "",
-      "format": "",
-      "tooltip-format": "{temperatureF}°F\n{temperatureC}°C",
-      "on-click": "kitty gotop"
+      "format": "{icon}",
+      "format-critical": "!",
+      "format-icons": ["","","","",""],
+      "tooltip-format": "CPU:\n{temperatureF}°F\n{temperatureC}°C",
+      "on-click": "kitty htop"
    },
    "backlight": {
       "format": "{icon} {percent: >3}%",
