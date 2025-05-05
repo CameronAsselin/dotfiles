@@ -232,3 +232,7 @@ window#waybar {
     margin-right: 10px;
     margin-left: 10px;
 }
+
+#custom-power {
+    margin-right: 15px;
+}
