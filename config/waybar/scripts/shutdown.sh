@@ -5,22 +5,22 @@ answer=$(zenity --info --text="<span size=\"xx-large\">Do you want to <b>shutdow
 echo $answer
 
 if [ $answer = "Logout" ]; then
-  sure=$(zenity --info --text="<span size=\"xx-large\">Are you <b>sure</b>?</span>" --title="Logout" --ok-label="Yes" --extra-button="No")
-  if [ $sure =  "" ]; then
+  sure=$(zenity --info --text="<span size=\"xx-large\">Are you <b>sure</b>?</span>" --title="Logout" --ok-label="No" --extra-button="Yes")
+  if [ $sure =  "Yes" ]; then
     hyprctl dispatch exit
   else
     exit
   fi
 elif [ $answer = "Restart" ]; then
-  sure=$(zenity --info --text="<span size=\"xx-large\">Are you <b>sure</b>?</span>" --title="Restart" --ok-label="Yes" --extra-button="No")
-  if [ $sure =  "" ]; then
+  sure=$(zenity --info --text="<span size=\"xx-large\">Are you <b>sure</b>?</span>" --title="Restart" --ok-label="No" --extra-button="Yes")
+  if [ $sure =  "Yes" ]; then
     reboot
   else
     exit
   fi
 elif [ $answer = "Shutdown" ]; then
-  sure=$(zenity --info --text="<span size=\"xx-large\">Are you <b>sure</b>?</span>" --title="Shutdown" --ok-label="Yes" --extra-button="No")
-  if [ $sure =  "" ]; then
+  sure=$(zenity --info --text="<span size=\"xx-large\">Are you <b>sure</b>?</span>" --title="Shutdown" --ok-label="No" --extra-button="Yes")
+  if [ $sure =  "Yes" ]; then
     shutdown now
   else
     exit
