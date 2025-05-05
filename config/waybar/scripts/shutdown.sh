@@ -5,11 +5,26 @@ answer=$(zenity --info --text="<span size=\"xx-large\">Do you want to <b>shutdow
 echo $answer
 
 if [ $answer = "Logout" ]; then
-  hyprctl dispatch exit
+  sure=$(zenity --info --text="<span size=\"xx-large\">Are you <b>sure</b>?</span>" --title="Logout" --ok-label="Yes" --extra-button="No")
+  if [ $sure =  "" ]; then
+    hyprctl dispatch exit
+  else
+    exit
+  fi
 elif [ $answer = "Restart" ]; then
-  reboot
+  sure=$(zenity --info --text="<span size=\"xx-large\">Are you <b>sure</b>?</span>" --title="Restart" --ok-label="Yes" --extra-button="No")
+  if [ $sure =  "" ]; then
+    reboot
+  else
+    exit
+  fi
 elif [ $answer = "Shutdown" ]; then
-  shutdown now
+  sure=$(zenity --info --text="<span size=\"xx-large\">Are you <b>sure</b>?</span>" --title="Shutdown" --ok-label="Yes" --extra-button="No")
+  if [ $sure =  "" ]; then
+    shutdown now
+  else
+    exit
+  fi
 else
   exit 
 fi
