@@ -6,8 +6,7 @@
 
    "modules-left": ["custom/menu", "custom/crypto", "custom/stock", "mpris"],
    "modules-center": ["hyprland/workspaces", "sway/workspaces"],
-   "modules-right": ["battery", "temperature", "pulseaudio", "custom/usb", "custom/vpn", "bluetooth", "tray", "custom/weather", "clock", "custom/power"], 
-    
+    "modules-right": ["battery", "cpu", "memory", "network", "temperature", "pulseaudio", "custom/usb", "custom/vpn", "bluetooth", "tray", "custom/weather", "clock", "custom/power"],    
 // Modules configuration
  
    "hyprland/workspaces": {
@@ -88,12 +87,13 @@
       "tooltip": true
    },
    "cpu": {
-      "format": "󰊠{usage: >3}%",
-      "on-click": "kitty gotop"
+      "format": "",
+      "on-click": "kitty htop"
    },
    "memory": {
-      "format": "{: >3}%",
-      "on-click": "kitty gotop"
+      "format": "",
+      "tooltip-format": "RAM:\n{used:0.1f}GB/{total:0.1f}GB",
+      "on-click": "kitty htop"
    },
    "temperature": {
       "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
@@ -125,14 +125,14 @@
       },
    },
    "network": {
-      "format": "󰱮",
+      //"interface": "wlan0", // (Optional) To force the use of this interface
+      "interval": "10",        
       "format-icons": ["󰇷", "󰱶", "󰱴", "󰱨", "󰱯"],
       "format-wifi": "{icon}",
       "format-ethernet": "󰈀",
       "format-disconnected": "󰱮",
-      "on-click-right": "nm-connection-editor",
-      "on-click": "kitty -e nmtui",
-      "tooltip-format": "{essid}\n{ipaddr} via {gwaddr}",
+      "on-click": "kitty htop",
+      "tooltip-format": "{essid} ({ifname}): {ipaddr}\nUp: {bandwidthUpBytes}\nDown: {bandwidthDownBytes}",
       "tooltip-format-disconnected": "disconnected"
    },
    "pulseaudio": {
