@@ -137,6 +137,7 @@ window#waybar {
 
 #temperature {
     color: #A6D189;
+    margin-left: 10px;
 }
 
 #temperature.critical {
@@ -190,7 +191,6 @@ window#waybar {
 
 #pulseaudio {
     color: #FFFFFF;
-    margin-left: 10px;
 }
 
 #pulseaudio.muted {
