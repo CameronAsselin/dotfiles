@@ -201,5 +201,6 @@
    "custom/power": {
 	"format": "⏻",
         "on-click": "~/.config/waybar/scripts/shutdown.sh",
+	"tooltip-format": "Power options",
    },
 }
