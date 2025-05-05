@@ -6,7 +6,7 @@
 
    "modules-left": ["custom/menu", "custom/crypto", "custom/stock", "mpris"],
    "modules-center": ["hyprland/workspaces", "sway/workspaces"],
-   "modules-right": ["battery", "pulseaudio", "custom/usb", "custom/vpn", "temperature", "bluetooth", "tray", "custom/weather", "clock"], 
+   "modules-right": ["battery", "pulseaudio", "custom/usb", "custom/vpn", "temperature", "bluetooth", "tray", "custom/weather", "clock", "custom/power"], 
     
 // Modules configuration
  
@@ -197,5 +197,9 @@
             "today":      "<span color='#E78284'><b><u>{}</u></b></span>"
          },
       },
+   },
+   "custom/power": {
+	"format": "⏻",
+        "on-click": "~/.config/waybar/scripts/shutdown.sh",
    },
 }
