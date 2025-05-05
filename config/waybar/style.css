@@ -82,6 +82,13 @@ window#waybar {
     border-bottom: 2px solid #8CAAEE;
 }
 
+#cpu,
+#memory,
+#network,
+#temperature {
+    border-bottom: 2px solid #E5C890;
+}
+
 #cava {
     color: #E78284;
     margin-left: 10px;
@@ -126,18 +133,15 @@ window#waybar {
 
 #cpu {
     color: #8CAAEE;
-    border-bottom: 2px solid #8CAAEE;
 }
 
 #memory {
     color: #F4B8E4;
-    border-bottom: 2px solid #F4B8E4;
-    margin-left: 10px;
 }
 
 #temperature {
     color: #A6D189;
-    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #temperature.critical {
