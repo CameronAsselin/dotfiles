@@ -87,15 +87,15 @@
       "tooltip": true
    },
    "cpu": {
-      "interval": "5",
-      "format": "",
-      "on-click": "kitty htop"
+      "interval": "2",
+      "format": " {usage}%",
+      "on-click": "gnome-system-monitor"
    },
    "memory": {
       "interval": "5",
-      "format": "",
+      "format": " {used:0.1f}GB/{total:0.1f}GB",
       "tooltip-format": "RAM:\n{used:0.1f}GB/{total:0.1f}GB",
-      "on-click": "kitty htop"
+      "on-click": "gnome-system-monitor"
    },
    "temperature": {
       "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
@@ -104,7 +104,7 @@
       "format-critical": "!",
       "format-icons": ["","","","",""],
       "tooltip-format": "CPU:\n{temperatureF}°F\n{temperatureC}°C",
-      "on-click": "kitty htop"
+      "on-click": "gnome-system-monitor"
    },
    "backlight": {
       "format": "{icon} {percent: >3}%",
@@ -128,12 +128,10 @@
    },
    "network": {
       //"interface": "wlan0", // (Optional) To force the use of this interface
-      "interval": "5",        
-      "format-icons": ["󰇷", "󰱶", "󰱴", "󰱨", "󰱯"],
-      "format-wifi": "{icon}",
-      "format-ethernet": "󰈀",
+      "interval": "2",        
+      "format": " {bandwidthUpBits} {bandwidthDownBytes}",
       "format-disconnected": "󰱮",
-      "on-click": "kitty htop",
+      "on-click": "gnome-system-monitor",
       "tooltip-format": "{essid} ({ifname}): {ipaddr}\nUp: {bandwidthUpBytes}\nDown: {bandwidthDownBytes}",
       "tooltip-format-disconnected": "disconnected"
    },
