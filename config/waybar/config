@@ -42,7 +42,7 @@
    "mpris": {
       "format": "{player_icon}{artist} - {title}",
       "artist-len": 18,
-      "title-len": 22,
+      "title-len": 53,
       "interval": 2,
       "player-icons": { 
          "default": "🎵 ",
