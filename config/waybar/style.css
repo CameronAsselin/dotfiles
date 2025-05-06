@@ -161,7 +161,7 @@ window#waybar {
 }
 
 #battery.full {
-    color: #E5C890;
+    color: #C6A0F6;
 }
 
 #battery.critical:not(.charging) {
