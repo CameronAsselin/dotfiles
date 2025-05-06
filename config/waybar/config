@@ -187,7 +187,7 @@
       "tooltip-format": "<tt><small>{calendar}</small></tt>",
       "format": "{:%a %b %d\n %I:%M %p}",
       "interval": 1,
-      "on-click": "kitty calcurse",
+      "on-click": "thunderbird -calendar",
       "calendar": {
          "mode": "month",
          "mode-mon-col": 3,
