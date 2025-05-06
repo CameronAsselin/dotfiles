@@ -129,7 +129,7 @@
    "network": {
       //"interface": "wlan0", // (Optional) To force the use of this interface
       "interval": "2",        
-      "format": " {bandwidthUpBits} {bandwidthDownBytes}",
+      "format": " {bandwidthUpBits}  {bandwidthDownBytes}",
       "format-disconnected": "󰱮",
       "on-click": "gnome-system-monitor",
       "tooltip-format": "{essid} ({ifname}): {ipaddr}\nUp: {bandwidthUpBytes}\nDown: {bandwidthDownBytes}",
