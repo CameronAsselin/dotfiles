@@ -84,8 +84,7 @@ window#waybar {
 
 #cpu,
 #memory,
-#network,
-#temperature {
+#network {
     border-bottom: 3px solid #C6A0F6;
 }
 
@@ -141,7 +140,6 @@ window#waybar {
 
 #temperature {
     color: #A6D189;
-    margin-right: 10px;
 }
 
 #temperature.critical {
@@ -195,6 +193,7 @@ window#waybar {
 
 #pulseaudio {
     color: #FFFFFF;
+    margin-right: 10px;
 }
 
 #pulseaudio.muted {
