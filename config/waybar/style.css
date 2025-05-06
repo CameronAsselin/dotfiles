@@ -193,7 +193,7 @@ window#waybar {
 
 #pulseaudio {
     color: #FFFFFF;
-    margin-right: 10px;
+    margin-left: 10px;
 }
 
 #pulseaudio.muted {
@@ -236,5 +236,6 @@ window#waybar {
 }
 
 #custom-power {
+    color: #FFFFFF;
     margin-right: 15px;
 }
