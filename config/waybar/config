@@ -73,7 +73,6 @@
       "return-type": "json",
       "interval": 5,
       "on-click-right": "nm-connection-editor",
-      "on-click": "kitty -e nmtui",
       "tooltip": true
    },
    "custom/usb": {
@@ -83,7 +82,6 @@
       "return-type": "json",
       "interval": 5,
       "on-click": "thunar",
-      "on-click-right": "kitty ranger ~/",
       "tooltip": true
    },
    "cpu": {
