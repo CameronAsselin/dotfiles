@@ -9,10 +9,10 @@
 window {
   width: 48%;
   height: 48%;
-
   orientation: horizontal;
-  location: center;
-  anchor: center;
+  location: north;
+  anchor: north;
+  y-offset: 5px;
   border: 3px;
   border-color: #F4B8E4;
   border-radius: 10px;
