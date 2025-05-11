@@ -152,7 +152,7 @@
       "tooltip-format": "Volume: {volume: >3}%\n{desc}"
    },
    "custom/crypto": {
-      "format": "{}",
+      "format": "{}",
       "exec": "~/.config/waybar/scripts/crypto/crypto.py",
       "on-click": "firefox https://www.coingecko.com/en/coins/monero",
    },
