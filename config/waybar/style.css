@@ -85,7 +85,7 @@ window#waybar {
 #cpu,
 #memory,
 #network {
-    border-bottom: 3px solid #C6A0F6;
+    border-bottom: none;
 }
 
 #cava {
