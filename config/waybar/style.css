@@ -206,9 +206,15 @@ window#waybar {
     margin-left: 10px;
 }
 
-#custom-stock{
-    color: #C6A0F6;
-    border-bottom: 3px solid #C6A0F6;
+#custom-gold{
+    color: #EED49F;
+    border-bottom: 3px solid #EED49F;
+    margin-left: 10px;
+}
+
+#custom-silver{
+    color: #939AB7;
+    border-bottom: 3px solid #939AB7;
     margin-left: 10px;
 }
 

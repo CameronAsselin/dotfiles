@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # get_weather.sh
-for i in {1..5}
+for i in {1..3}
 do
     text=$(curl -s "https://wttr.in/$1?format=1")
     if [[ $? == 0 ]]

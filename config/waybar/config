@@ -4,40 +4,32 @@
    "height": 30,
    "margin": "0 0 0 0",
 
-   "modules-left": ["custom/menu", "custom/crypto", "mpris"],
+   "modules-left": ["custom/menu", "custom/crypto", "custom/gold", "custom/silver"],
    "modules-center": ["hyprland/workspaces", "sway/workspaces"],
-    "modules-right": ["battery", "pulseaudio", "temperature", "custom/usb", "custom/vpn", "bluetooth", "tray", "custom/weather", "clock", "custom/power"],    
+    "modules-right": ["cpu", "memory", "network", "battery", "pulseaudio", "temperature", "custom/usb", "custom/vpn", "bluetooth", "tray", "custom/weather", "clock", "custom/power"],    
 // Modules configuration
  
    "hyprland/workspaces": {
       "format": "{icon}",
       "format-icons": {
          "urgent": "",
-         "active": "󰚌",
-	 "1":"",
-	 "2":"",
-         "3":"",
+         "active": "󰚌"
       },
       "persistent-workspaces": {
          "1": [],
-         "2": [],
-         "3": [],
-      },
+         "2": []
+      }
    },
    "sway/workspaces": {
       "format": "{icon}",
       "format-icons": {
          "urgent": "",
-         "active": "󰚌",
-	 "1":"",
-	 "2":"",
-         "3":"",
+         "active": "󰚌"
       },
       "persistent-workspaces": {
          "1": [],
-         "2": [],
-         "3": [],
-      },
+         "2": []
+      }
    },
    "mpris": {
       "format": "{player_icon}{artist} - {title}",
@@ -50,7 +42,7 @@
          "strawberry": "🍓 ",
          "firefox": "  ",
          "spotify": " "
-      },
+      }
    },
    "custom/weather": {
       "exec": "~/.config/waybar/scripts/get_weather.sh",
@@ -122,7 +114,7 @@
          "fair": 50,
          "warning": 30,
          "critical": 10
-      },
+      }
    },
    "network": {
       //"interface": "wlan0", // (Optional) To force the use of this interface
@@ -154,18 +146,26 @@
    "custom/crypto": {
       "format": "{}",
       "exec": "~/.config/waybar/scripts/crypto/crypto.py",
-      "on-click": "firefox https://www.coingecko.com/en/coins/monero",
+      "on-click": "firefox https://www.coingecko.com/en/coins/monero"
    },
-   "custom/stock": {
-      "format": " {}",
-      "exec": "~/.config/waybar/scripts/stock/stock.py --customticker BBBYQ"
+   "custom/silver": {
+      "format": "󱉏 {}",
+      "exec": "python ~/.config/waybar/scripts/ticker.py SI=F",
+      "on-click": "firefox https://finance.yahoo.com/quote/SI=F/",
+      "restart-interval": 10
+   },
+   "custom/gold": {
+      "format": "󱉏 {}",
+      "exec": "python ~/.config/waybar/scripts/ticker.py GC=F",
+      "on-click": "firefox https://finance.yahoo.com/quote/GC=F/",
+      "restart-interval": 10
    },
    "bluetooth": {
       "format": "",
       "format-on": "",
       "format-disabled": "󰂲",
       "format-off": "󰂲",
-      "format-connected": " {device_alias}",
+      "format-connected": "",
       "tooltip-format": "{controller_alias}\t{controller_address}",
       "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
       "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
@@ -195,12 +195,12 @@
             "weeks":      "<span color='#E5C890'><b>W{}</b></span>",
             "weekdays":   "<span color='#F5A97F'><b>{}</b></span>",
             "today":      "<span color='#E78284'><b><u>{}</u></b></span>"
-         },
-      },
+         }
+      }
    },
    "custom/power": {
 	"format": "⏻",
         "on-click": "~/.config/waybar/scripts/shutdown.sh",
-	"tooltip-format": "Power options",
-   },
+	"tooltip-format": "Power options"
+   }
 }
