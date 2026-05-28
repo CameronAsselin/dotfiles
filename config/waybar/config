@@ -149,13 +149,13 @@
       "on-click": "firefox https://www.coingecko.com/en/coins/monero"
    },
    "custom/silver": {
-      "format": "󱉏 {}",
+      "format": " {}",
       "exec": "python ~/.config/waybar/scripts/ticker.py SI=F",
       "on-click": "firefox https://finance.yahoo.com/quote/SI=F/",
       "restart-interval": 10
    },
    "custom/gold": {
-      "format": "󱉏 {}",
+      "format": " {}",
       "exec": "python ~/.config/waybar/scripts/ticker.py GC=F",
       "on-click": "firefox https://finance.yahoo.com/quote/GC=F/",
       "restart-interval": 10
