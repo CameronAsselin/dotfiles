@@ -24,7 +24,7 @@ export MANPAGER='nvim +Man!'
 # Alias list
 alias clear='cd && clear && kitty +kitten icat --align left ~/Pictures/theme/skeleton_cheezit.gif && ls'
 alias update='sudo reflector --latest 5 --verbose --country US --sort rate --save /etc/pacman.d/mirrorlist --download-timeout 60; sudo pacman -Syu; paru; pacman -Qtdq | sudo pacman -Rns; sudo pacman -Scc'
-alias chat='ollama pull hf.co/HauhauCS/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive; ollama run hf.co/HauhauCS/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive'
+alias chat='sudo systemctl start ollama; ollama pull hf.co/HauhauCS/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive; ollama run hf.co/HauhauCS/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive; sudo systemctl stop ollama'
 # Changing "ls" to "exa"
 alias ls='exa --icons --color=always --group-directories-first'
 alias ll='exa -alF --icons --color=always --group-directories-first'
