@@ -26,11 +26,11 @@ alias clear='cd && clear && kitty +kitten icat --align left ~/Pictures/theme/ske
 alias update='sudo reflector --latest 5 --verbose --country US --sort rate --save /etc/pacman.d/mirrorlist --download-timeout 60; sudo pacman -Syu; paru; pacman -Qtdq | sudo pacman -Rns; sudo pacman -Scc'
 alias chat='ollama serve & > ~/.cache/ollama_serve_start; ollama pull hf.co/HauhauCS/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive; ollama run hf.co/HauhauCS/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive; killall ollama'
 # Changing "ls" to "exa"
-alias ls='exa --icons --color=always --group-directories-first'
-alias ll='exa -alF --icons --color=always --group-directories-first'
-alias la='exa -a --icons --color=always --group-directories-first'
-alias l='exa -F --icons --color=always --group-directories-first'
-alias l.='exa -a | egrep "^\."'
+alias ls='eza --icons --color=always --group-directories-first'
+alias ll='eza -alF --icons --color=always --group-directories-first'
+alias la='eza -a --icons --color=always --group-directories-first'
+alias l='eza -F --icons --color=always --group-directories-first'
+alias l.='eza -a | egrep "^\."'
 
 # Skeleton GIF & ls home directory when opening terminal
 kitty +kitten icat --align left ~/Pictures/theme/skeleton_cheezit.gif
