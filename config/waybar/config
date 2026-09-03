@@ -171,7 +171,7 @@
       "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
       "tooltip-format-disabled": "disabled",
       "tooltip-format-off": "off",
-      "on-click": "blueberry"
+      "on-click": "blueman"
    },
    "tray": {
       "spacing": 10,
