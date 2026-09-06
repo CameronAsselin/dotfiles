@@ -4,7 +4,7 @@
    "height": 30,
    "margin": "0 0 0 0",
 
-   "modules-left": ["custom/menu", "custom/crypto", "custom/gold", "custom/silver"],
+   "modules-left": ["custom/menu","custom/crypto", "custom/ticker",  "custom/gold", "custom/silver"],
    "modules-center": ["hyprland/workspaces", "sway/workspaces"],
     "modules-right": ["cpu", "memory", "network", "battery", "pulseaudio", "temperature", "custom/usb", "custom/vpn", "bluetooth", "tray", "custom/weather", "clock", "custom/power"],    
 // Modules configuration
@@ -83,7 +83,7 @@
    },
    "memory": {
       "interval": "5",
-      "format": " {used:0.1f}GB/{total:0.1f}GB",
+      "format": " {used:0.1f}GB",
       "tooltip-format": "RAM:\n{used:0.1f}GB/{total:0.1f}GB",
       "on-click": "gnome-system-monitor"
    },
@@ -143,6 +143,12 @@
       "on-scroll-down": "pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob",
       "tooltip-format": "Volume: {volume: >3}%\n{desc}"
    },
+ "custom/ticker": {
+      "format": " {}",
+      "exec": "python ~/.config/waybar/scripts/ticker.py AMD",
+      "on-click": "firefox https://finance.yahoo.com/quote/AMD/",
+      "restart-interval": 10
+   },
    "custom/crypto": {
       "format": "{}",
       "exec": "~/.config/waybar/scripts/crypto/crypto.py",
@@ -171,7 +177,7 @@
       "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
       "tooltip-format-disabled": "disabled",
       "tooltip-format-off": "off",
-      "on-click": "blueman"
+      "on-click": "blueberry"
    },
    "tray": {
       "spacing": 10,

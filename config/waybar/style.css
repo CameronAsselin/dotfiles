@@ -113,7 +113,7 @@ window#waybar {
 }
 
 #custom-menu {
-    color: #E5C890;
+    color: #FFFFFF;
     margin-left: 20px;
     font-size: 30px;
 }
@@ -131,7 +131,7 @@ window#waybar {
 }
 
 #cpu {
-    color: #8CAAEE;
+    color: #F5A97F;
 }
 
 #memory {
@@ -201,19 +201,25 @@ window#waybar {
 }
 
 #custom-crypto{
+    color: #F5A97F;
+    border-bottom: 3px solid #F5A97F;
+    margin-left: 10px;
+}
+
+#custom-ticker{
     color: #F4B8E4;
     border-bottom: 3px solid #F4B8E4;
     margin-left: 10px;
 }
 
 #custom-gold{
-    color: #EED49F;
-    border-bottom: 3px solid #EED49F;
+    color: #DAA520;
+    border-bottom: 3px solid #DAA520;
     margin-left: 10px;
 }
 
 #custom-silver{
-    color: #939AB7;
+    color: #ACACAC;
     border-bottom: 3px solid #939AB7;
     margin-left: 10px;
 }
