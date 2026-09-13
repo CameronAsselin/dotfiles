@@ -35,7 +35,7 @@
       "format": "{player_icon}{artist} - {title}",
       "artist-len": 18,
       "title-len": 49,
-      "interval": 2,
+      "interval": 1,
       "player-icons": { 
          "default": "🎵 ",
          "mpv": "  ",
@@ -77,12 +77,12 @@
       "tooltip": true
    },
    "cpu": {
-      "interval": "2",
+      "interval": 5,
       "format": " {usage}%",
       "on-click": "gnome-system-monitor"
    },
    "memory": {
-      "interval": "5",
+      "interval": 5,
       "format": " {used:0.1f}GB",
       "tooltip-format": "RAM:\n{used:0.1f}GB/{total:0.1f}GB",
       "on-click": "gnome-system-monitor"
@@ -118,8 +118,8 @@
    },
    "network": {
       //"interface": "wlan0", // (Optional) To force the use of this interface
-      "interval": "2",        
-      "format": " {bandwidthDownBits}  {bandwidthUpBits}",
+      "interval": 5,        
+      "format": " {bandwidthDownBytes}  {bandwidthUpBytes}",
       "format-disconnected": "󰱮",
       "on-click": "gnome-system-monitor",
       "tooltip-format": "{essid} ({ifname}): {ipaddr}\nUp: {bandwidthUpBytes}\nDown: {bandwidthDownBytes}",
@@ -147,24 +147,25 @@
       "format": " {}",
       "exec": "python ~/.config/waybar/scripts/ticker.py AMD",
       "on-click": "firefox https://finance.yahoo.com/quote/AMD/",
-      "restart-interval": 10
+      "interval": 60
    },
    "custom/crypto": {
       "format": "{}",
       "exec": "~/.config/waybar/scripts/crypto/crypto.py",
-      "on-click": "firefox https://www.coingecko.com/en/coins/monero"
+      "on-click": "firefox https://www.coingecko.com/en/coins/monero",
+      "interval": 60
    },
    "custom/silver": {
       "format": " {}",
       "exec": "python ~/.config/waybar/scripts/ticker.py SI=F",
       "on-click": "firefox https://finance.yahoo.com/quote/SI=F/",
-      "restart-interval": 10
+      "interval": 60
    },
    "custom/gold": {
       "format": " {}",
       "exec": "python ~/.config/waybar/scripts/ticker.py GC=F",
       "on-click": "firefox https://finance.yahoo.com/quote/GC=F/",
-      "restart-interval": 10
+      "restart-interval": 60
    },
    "bluetooth": {
       "format": "",
