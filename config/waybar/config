@@ -6,7 +6,7 @@
 
    "modules-left": ["custom/menu","custom/crypto", "custom/ticker",  "custom/gold", "custom/silver"],
    "modules-center": ["hyprland/workspaces", "sway/workspaces"],
-    "modules-right": ["cpu", "memory", "network", "battery", "pulseaudio", "temperature", "custom/usb", "custom/vpn", "bluetooth", "tray", "custom/weather", "clock", "custom/power"],    
+    "modules-right": ["network", "cpu", "memory", "battery", "pulseaudio", "temperature", "custom/usb", "custom/vpn", "bluetooth", "tray", "custom/weather", "clock", "custom/power"],    
 // Modules configuration
  
    "hyprland/workspaces": {
@@ -76,13 +76,21 @@
       "on-click": "thunar",
       "tooltip": true
    },
+   "network": {
+      "interval": 2,        
+      "format": " {bandwidthDownBytes}  {bandwidthUpBytes}",
+      "format-disconnected": "󰱮",
+      "on-click": "gnome-system-monitor",
+      "tooltip-format": "{essid} ({ifname}): {ipaddr}\nUp: {bandwidthUpBytes}\nDown: {bandwidthDownBytes}",
+      "tooltip-format-disconnected": "disconnected"
+   },
    "cpu": {
-      "interval": 5,
+      "interval": 2,
       "format": " {usage}%",
       "on-click": "gnome-system-monitor"
    },
    "memory": {
-      "interval": 5,
+      "interval": 2,
       "format": " {used:0.1f}GB",
       "tooltip-format": "RAM:\n{used:0.1f}GB/{total:0.1f}GB",
       "on-click": "gnome-system-monitor"
@@ -115,15 +123,6 @@
          "warning": 30,
          "critical": 10
       }
-   },
-   "network": {
-      //"interface": "wlan0", // (Optional) To force the use of this interface
-      "interval": 5,        
-      "format": " {bandwidthDownBytes}  {bandwidthUpBytes}",
-      "format-disconnected": "󰱮",
-      "on-click": "gnome-system-monitor",
-      "tooltip-format": "{essid} ({ifname}): {ipaddr}\nUp: {bandwidthUpBytes}\nDown: {bandwidthDownBytes}",
-      "tooltip-format-disconnected": "disconnected"
    },
    "pulseaudio": {
       "scroll-step": 1,
