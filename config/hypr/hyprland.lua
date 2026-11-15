@@ -8,6 +8,7 @@ local email = "thunderbird"
 local passwords = "bitwarden-desktop"
 local menu = "rofi -show drun"
 local menuAlt = "rofi -show run"
+local bluetooth = "blueman-applet"
 
 -- Set monitor(s)
 
@@ -17,7 +18,6 @@ hl.monitor({
     position = "auto",
     scale = "1",
 })
-
 hl.monitor({
     output = "HDMI-A-1",
     mode = "1920x1080@60",
@@ -25,7 +25,50 @@ hl.monitor({
     scale = "1",
 })
 
--- For all categories, see https://wiki.hyprland.org/Configuring/Variables/
+-- Config
+
+hl.config({
+    input = {
+        kb_layout = "us",
+        kb_variant = "",
+        kb_model = "",
+        kb_options = "",
+        kb_rules = "",
+        follow_mouse = 1,
+        touchpad = {
+            natural_scroll = false,
+        },
+        sensitivity = .25, -- -1.0 to 1.0, 0 means no modification.
+    },
+    general = {
+        gaps_in = 10,
+        gaps_out = 20,
+        border_size = 2,
+        col = {
+            active_border = { colors = { "rgb(c6a0f6)", "rgb(f4b8e4)" }, angle = 45 },
+            inactive_border = "rgb(51576d)",
+        },
+        layout = "dwindle",
+        -- Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
+        allow_tearing = false,
+    },
+    decoration = {
+        rounding = 10,
+        blur = {
+            enabled = true,
+            size = 3,
+            passes = 1,
+        },
+    },
+    animations = {
+        enabled = true,
+    },
+    dwindle = {
+        preserve_split = true, -- you probably want this
+    },
+})
+
+-- Animations
 
 hl.curve("myBezier", { type = "bezier", points = { { 0.05, 0.9 }, { 0.1, 1.05 } } })
 hl.animation({
@@ -82,14 +125,12 @@ hl.window_rule({
     },
     float = true,
 })
-
 hl.window_rule({
     match = {
         class = "^(org.gnome.Calculator)$",
     },
     float = true,
 })
-
 hl.window_rule({
     match = {
         class = "^(blueman-manager)$",
@@ -97,14 +138,12 @@ hl.window_rule({
     float = true,
     size = "500 500",
 })
-
 hl.window_rule({
     match = {
         class = "^(nm-connection-editor)$",
     },
     float = true,
 })
-
 hl.window_rule({
     match = {
         class = "^(org.pulseaudio.pavucontrol)$",
@@ -112,7 +151,6 @@ hl.window_rule({
     float = true,
     size = "700 700",
 })
-
 hl.window_rule({
     match = {
         class = "^(Bitwarden)$",
@@ -121,13 +159,14 @@ hl.window_rule({
     center = true,
     size = "900 700",
 })
-
 hl.window_rule({
     match = {
         title = "^(File Operation Progress)$",
     },
     float = true,
 })
+
+-- Keybinds
 
 local mod = "SUPER"
 
@@ -212,61 +251,7 @@ hl.bind(mod .. " + CONTROL + 2", hl.dsp.exec_cmd(terminal .. " nvim ~/.config/wa
 hl.bind(mod .. " + CONTROL + 3", hl.dsp.exec_cmd(terminal .. " nvim ~/.config/rofi/custom.rasi"))
 hl.bind(mod .. " + CONTROL + 4", hl.dsp.exec_cmd(terminal .. " nvim ~/.config/kitty/kitty.conf"))
 
-hl.config({
-    input = {
-        kb_layout = "us",
-        kb_variant = "",
-        kb_model = "",
-        kb_options = "",
-        kb_rules = "",
-        follow_mouse = 1,
-        touchpad = {
-            natural_scroll = false,
-        },
-        sensitivity = .25, -- -1.0 to 1.0, 0 means no modification.
-    },
-    general = {
-        gaps_in = 10,
-        gaps_out = 20,
-        border_size = 2,
-        col = {
-            active_border = { colors = { "rgb(c6a0f6)", "rgb(f4b8e4)" }, angle = 45 },
-            inactive_border = "rgb(51576d)",
-        },
-        layout = "dwindle",
-        -- Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
-        allow_tearing = false,
-    },
-    decoration = {
-        rounding = 10,
-        blur = {
-            enabled = true,
-            size = 3,
-            passes = 1,
-        },
-    },
-    animations = {
-        enabled = true,
-    },
-    dwindle = {
-        preserve_split = true, -- you probably want this
-    },
-    -- Floating windows
-    -- Super key
-    -- Binds
-    -- Keyboard backlight
-    -- Volume and Media Control
-    -- Screen brightness
-    -- Move focus with mainMod + arrow keys
-    -- Move windows
-    -- Resize windows
-    -- Switch workspaces
-    -- Move active window to a workspace
-    -- Scroll through existing workspaces with mainMod + scroll
-    -- Move/resize windows with mainMod + LMB/RMB and dragging
-    -- Config keybinds
-    -- Execute startup apps
-})
+-- Startup apps
 
 hl.on("hyprland.start", function()
     hl.exec_cmd("/usr/lib/hyprpolkitagent/hyprpolkitagent")
@@ -275,9 +260,9 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("~/.config/waybar/scripts/launch.sh")
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("nm-applet")
+    hl.exec_cmd("blueman-applet")
     hl.exec_cmd("copyq")
     hl.exec_cmd(terminal, { workspace = "2" })
     hl.exec_cmd(email, { workspace = "2" })
     hl.exec_cmd(browser, { workspace = "1" })
 end)
-
