@@ -6,7 +6,7 @@
 
    "modules-left": ["custom/menu","custom/crypto", "custom/ticker",  "custom/gold", "custom/silver"],
    "modules-center": ["hyprland/workspaces", "sway/workspaces"],
-    "modules-right": ["network", "cpu", "memory", "battery", "pulseaudio", "temperature", "custom/usb", "custom/vpn", "bluetooth", "tray", "custom/weather", "clock", "custom/power"],    
+    "modules-right": ["network", "cpu", "memory", "battery", "pulseaudio", "temperature", "custom/usb", "custom/vpn", "tray", "custom/weather", "clock", "custom/power"],    
 // Modules configuration
  
    "hyprland/workspaces": {
